@@ -51,7 +51,7 @@ df = df
 df.plot(x = 'Date', y=['var1','var2'], figsize = (18,10), linewidht = 4) # le variabili possono essere n
 plt.ylabel('Price [$]')
 plt.title('Stock Price')
-plt.legend(loc = 'best')
+plt.legend('best')
 plt.grid()
 
 #PLOT SUBPLOT
@@ -108,7 +108,7 @@ plt.show()
 # SEABORN PAIRPLOT, DISPLOT AND HEATMAPS CORRELATION
 
 'Stampa tutto il databese facendo riferimento al var'
-sns.pairplot(df, hue = 'target', var = ['mean radius', 'mean texture', 'mean area', 'mean perimeter', 'mena smoothness'])
+sns.pairplot(df, hue = 'target', vars = ['mean radius', 'mean texture', 'mean area', 'mean perimeter', 'mean smoothness'])
 plt.show()
 
 'Stampa tutto il databese rappresentando la correlazione tra le features'
@@ -128,7 +128,7 @@ class_1_df = df[df['target']==1]
 
 # nel caso avessi classi binarie
 
-plt.figure(figsize(10, 7))
+plt.figure(figsize = (10, 7))
 sns.distplot(class_0_df['mean radius'], bins=25, color = 'b')
 sns.distplot(class_1_df['mena radius'], bins = 25, color = 'r')
 plt.grid()
